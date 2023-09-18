@@ -23,7 +23,7 @@ class Route {
                 }
                 break;
             } else {
-                echo "URL not found: $_GET[route]";
+                include_once '../resources/errors/404.php';
                 break;
             }
         }
