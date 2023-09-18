@@ -1,18 +1,25 @@
 <?php
 require_once 'Controller.php';
+// require_once '../models/Student.php';
 
 use App\Controller;
+
 
 class HomeController extends Controller {
     public function home()
     {
-        $data = [
-            'title' => 'Home page',
-            'name' => 'John Doe',
-            'age' => 30,
-        ];
+        // $student = Student::get();
 
-        return $this->view('home', $data);
+        // echo $student;
+
+        echo "Home page<br />";
+        // $data = [
+        //     'title' => 'Home page',
+        //     'name' => 'John Doe',
+        //     'age' => 30,
+        // ];
+
+        // return $this->view('home', $data);
     }
     public function dashboard()
     {
