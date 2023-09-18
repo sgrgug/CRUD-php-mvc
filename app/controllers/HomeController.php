@@ -1,9 +1,18 @@
 <?php
+require_once 'Controller.php';
 
-class HomeController {
+use App\Controller;
+
+class HomeController extends Controller {
     public function index()
     {
-        echo 'Home page<br />';
+        $data = [
+            'title' => 'Home page',
+            'name' => 'John Doe',
+            'age' => 30,
+        ];
+
+        return $this->view('home', $data);
     }
     public function dashboard()
     {
