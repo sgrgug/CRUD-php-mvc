@@ -4,7 +4,7 @@ require_once 'Controller.php';
 use App\Controller;
 
 class HomeController extends Controller {
-    public function index()
+    public function home()
     {
         $data = [
             'title' => 'Home page',

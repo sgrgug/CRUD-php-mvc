@@ -6,7 +6,7 @@ require_once '../app/controllers/HomeController.php';
 
 
 $routes = [
-    'home' => 'HomeController@index',
+    'home' => 'HomeController@home',
     'dashboard' => 'HomeController@dashboard',
     'about' => 'HomeController@about',
 ];
