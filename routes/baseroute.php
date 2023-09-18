@@ -3,30 +3,28 @@
 class Route {
     
     public static function get($routes)
-    {   
-        foreach ($routes as $url => $class) {
-            list($controller, $method) = explode('@', $class);
-            // echo "URL: $url, Class: $controller, Method: $method<br>";
+    {  
+        if(array_key_exists($_GET['route'], $routes)){
+            
+            list($controller, $method) = explode('@', $routes[$_GET['route']]);
 
-            if($url == $_GET['route']){
-                if(class_exists($controller)){
-                    $controller = new $controller();
-                
-                    if(method_exists($controller, $method)){
-                        $controller->$method();
-                    }else{
-                        echo "Method not found: $method";
-                    }
-                
-                } else {
-                    echo "Controller not found: $controller";
+            if(class_exists($controller)){
+                $controller = new $controller();
+            
+                if(method_exists($controller, $method)){
+                    $controller->$method();
+                }else{
+                    echo "Method not found: $method";
                 }
-                break;
+            
             } else {
-                include_once '../resources/errors/404.php';
-                break;
+                echo "Controller not found: $controller";
             }
+
+        } else {
+            include_once '../resources/errors/404.php';
         }
+
     }
     
 }
