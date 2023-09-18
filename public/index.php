@@ -1,6 +1,6 @@
 <?php
 
-require_once '../app/controllers/HomeController.php';
+// require_once '../app/controllers/HomeController.php';
 
 // // Include the UserController class
 // require_once '../app/controllers/UserController.php';
@@ -51,27 +51,30 @@ require_once '../app/controllers/HomeController.php';
 // // echo $route->get();
 
 
-$route = $_GET['route'] ?? 'home/index';
+// $route = $_GET['route'] ?? 'home/index';
 
 
-list($controllerName, $methodName) = explode('/', $route);
+// list($controllerName, $methodName) = explode('/', $route);
 
-// $methodName == NULL ? 'index' : $methodName;
+// // $methodName == NULL ? 'index' : $methodName;
 
-$controllerClassName = ucfirst($controllerName) . 'Controller';
+// $controllerClassName = ucfirst($controllerName) . 'Controller';
 
-if(class_exists($controllerClassName)){
+// if(class_exists($controllerClassName)){
 
-    $controller = new $controllerClassName();
+//     $controller = new $controllerClassName();
 
-    if(method_exists($controller, $methodName)){
-        $controller->$methodName();
-    }else{
-        echo "Method not found: $methodName";
-    }
+//     if(method_exists($controller, $methodName)){
+//         $controller->$methodName();
+//     }else{
+//         echo "Method not found: $methodName";
+//     }
 
-} else {
-    echo "Controller not found: $controllerClassName";
-}
+// } else {
+//     echo "Controller not found: $controllerClassName";
+// }
+
+// -------------------
+require_once '../routes/web.php';
 
 ?>
