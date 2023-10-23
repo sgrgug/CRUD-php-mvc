@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Routes;
+
 class Route {
     
     public static function get($routes)

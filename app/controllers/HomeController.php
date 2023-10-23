@@ -2,24 +2,25 @@
 require_once 'Controller.php';
 // require_once '../models/Student.php';
 
-use App\Controller;
-
+use App\Controllers\Controller;
+// use App\Models\Student;
 
 class HomeController extends Controller {
+
     public function home()
     {
         // $student = Student::get();
 
         // echo $student;
 
-        echo "Home page<br />";
-        // $data = [
-        //     'title' => 'Home page',
-        //     'name' => 'John Doe',
-        //     'age' => 30,
-        // ];
+        // echo "Home page<br />";
+        $data = [
+            'title' => 'Home page',
+            'name' => 'John Doe',
+            'age' => 30,
+        ];
 
-        // return $this->view('home', $data);
+        return $this->view('home', $data);
     }
     public function dashboard()
     {
@@ -30,3 +31,5 @@ class HomeController extends Controller {
         echo 'About page<br />';
     }
 }
+
+echo $x;

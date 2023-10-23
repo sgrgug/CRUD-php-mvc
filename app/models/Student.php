@@ -1,10 +1,14 @@
 <?php
 
-class Student {
+// namespace App\Models;
 
-    public static function get()
-    {
-        echo "done";
-    }
+// class Student {
 
-}
+//     public static function get()
+//     {
+//         echo "done";
+//     }
+
+// }
+
+$x = 9;
