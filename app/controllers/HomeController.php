@@ -1,24 +1,36 @@
 <?php
 require_once 'Controller.php';
-// require_once '../models/Student.php';
+require_once(__DIR__ . '/../models/Student.php');
 
 use App\Controllers\Controller;
-// use App\Models\Student;
+use App\Models\Student;
 
 class HomeController extends Controller {
 
     public function home()
     {
-        // $student = Student::get();
+        $student = new Student();
 
-        // echo $student;
+        $data = $student->all();
+
+        // foreach($student as $s)
+        // {
+        //     echo $s->title;
+        // }
+
+        // echo $student->name;
 
         // echo "Home page<br />";
-        $data = [
-            'title' => 'Home page',
-            'name' => 'John Doe',
-            'age' => 30,
-        ];
+
+        // echo "sad";
+
+        // $data = [
+        //     'title' => 'Home page',
+        //     'name' => 'John Doe',
+        //     'age' => 30,
+        // ];
+
+            // print_r($data);
 
         return $this->view('home', $data);
     }
@@ -31,5 +43,3 @@ class HomeController extends Controller {
         echo 'About page<br />';
     }
 }
-
-echo $x;

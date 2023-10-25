@@ -1,14 +1,18 @@
 <?php
 
-// namespace App\Models;
+namespace App\Models;
 
-// class Student {
+class Student {
 
-//     public static function get()
-//     {
-//         echo "done";
-//     }
+    public function all()
+    {
+        return [
+                'title' => 'Home page',
+                'name' => 'John Doe',
+                'age' => 300,
+        ];
 
-// }
 
-$x = 9;
+    }
+
+}
