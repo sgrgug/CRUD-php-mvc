@@ -1,23 +1,20 @@
 <?php
 
-require_once "../../database/config.php";
+require_once(__DIR__ . '../../../database/database.php');
 
-class Model
-{
-    public function __construct()
+class Model {
+
+    public static function all()
     {
+        $model = new Database();
+
         $query = "SELECT * FROM student";
+        $sql = $model->connectDB()->prepare($query);
+        $sql->execute();
 
-        $result = $conn->query($query);
+        $results = $sql->fetchAll(PDO::FETCH_OBJ);
 
-        if (!$result) {
-          die("Query failed: " . $mysqli->error);
-        }
-
-        while ($row = $result->fetch_assoc())
-        {
-          echo $row['first_name'];
-          echo "<br />";
-        }
+        return $results;
     }
+
 }

@@ -1,18 +1,11 @@
 <?php
 
-namespace App\Models;
+require_once(__DIR__ . '/Model.php');
 
-class Student {
+class Student extends Model {
 
-    public function all()
-    {
-        return [
-                'title' => 'Home page',
-                'name' => 'John Doe',
-                'age' => 300,
-        ];
-
-
-    }
+    
 
 }
+
+?>
