@@ -2,19 +2,29 @@
 
 require_once(__DIR__ . '../../../database/database.php');
 
-class Model {
-
+trait modelTrait {
     public static function all()
     {
-        $model = new Database();
+        if(property_exists(get_called_class(), 'tableName'))
+        {
+            $model = new Database();
 
-        $query = "SELECT * FROM student";
-        $sql = $model->connectDB()->prepare($query);
-        $sql->execute();
+            $tableName = static::$tableName;
 
-        $results = $sql->fetchAll(PDO::FETCH_OBJ);
+            $query = "SELECT * FROM $tableName";
+            $sql = $model->connectDB()->prepare($query);
+            $sql->execute();
 
-        return $results;
+            $results = $sql->fetchAll(PDO::FETCH_OBJ);
+
+            return $results;
+        } else {
+            return [];
+        }
     }
+}
+
+class Model {
+    use modelTrait;
 
 }

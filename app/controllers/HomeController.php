@@ -14,7 +14,6 @@ class HomeController extends Controller {
         echo $this->print($d);
 
 
-
         // $d = new Student();
         // echo $d->tt();
         
