@@ -1,44 +1,42 @@
 <?php
 require_once 'Controller.php';
 require_once(__DIR__ . '/../models/Student.php');
+require_once(__DIR__ . '/../models/Book.php');
 
 use App\Controllers\Controller;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
     public function home()
     {
+        // Previous Link or Route
+        $this->previousURL();
 
-        $d = Student::all();
+        $students = Student::all();
 
-        echo $this->print($d);
-
-
-        // $d = new Student();
-        // echo $d->tt();
-        
-        // $std = new Student();
-        // echo $this->print($std);
-        // $sql = $std->conn->prepare("SELECT * FROM student");
-        // $sql->execute();
-
-        // $result = $sql->fetchAll(PDO::FETCH_OBJ);
-
-        // return $this->print($result);
-        
-        // $data = [
-        //     'title' => 'Home page',
-        //     'name' => 'John Doe',
-        //     'age' => 30,
-        // ];
-
-            // print_r($data);
-
-        // return $this->view('home', $data);
+        return $this->view('student', $students);
     }
+
+    public function createStudent()
+    {
+//         $con = new PDO("mysql:host=localhost;dbname=soeexam;", "root", "");
+
+//         $sq = $con->prepare("INSERT INTO student (first_name, middle_name, last_name, address, programe, total_qn, symbolNO, corect_qn, marks)
+// VALUES ('test', 'test', 'test', 'test', 'test', 1, 2, 3, 4)");
+
+//         $sq->execute();
+
+        
+        $student = new Student();
+
+    }
+
     public function dashboard()
     {
-        echo 'Dashboard page<br />';
+        $data = Book::all();
+
+        return $this->view('book', $data);
     }
     public function about()
     {

@@ -20,4 +20,9 @@ class Controller {
         }
     }
 
+    public function previousURL()
+    {
+        $_SESSION['previousURL'] = $_GET['route'];
+    }
+
 }
